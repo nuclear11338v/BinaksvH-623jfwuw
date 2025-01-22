@@ -38,10 +38,20 @@
     <div class="loading" id="loading">Downloading... Please wait.</div>
 
     <script>
-        document.getElementById("downloadBtn").onclick = function() {
-            document.getElementById("loading").style.display = "block";
-            window.location.href = "YOUR_APK_DOWNLOAD_URL"; // Replace with the APK download URL
-        };
+        // Get the APK URL from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const apkUrl = urlParams.get('apk_url');
+
+        // If APK URL is found, enable the download button
+        if (apkUrl) {
+            document.getElementById("downloadBtn").onclick = function() {
+                document.getElementById("loading").style.display = "block";
+                window.location.href = apkUrl; // Redirect to the APK URL
+            };
+        } else {
+            document.getElementById("downloadBtn").disabled = true;
+            document.getElementById("downloadBtn").innerText = "APK Not Found";
+        }
     </script>
 
 </body>
