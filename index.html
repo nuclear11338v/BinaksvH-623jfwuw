@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .download-btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Download Your APK</h1>
+    <p>Click the button below to download the APK.</p>
+    
+    <button class="download-btn" id="downloadBtn">Download APK</button>
+    
+    <div class="loading" id="loading">Downloading... Please wait.</div>
+
+    <script>
+        document.getElementById("downloadBtn").onclick = function() {
+            document.getElementById("loading").style.display = "block";
+            window.location.href = "YOUR_APK_DOWNLOAD_URL"; // Replace with the APK download URL
+        };
+    </script>
+
+</body>
+</html>
